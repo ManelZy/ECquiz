@@ -1,0 +1,186 @@
+Assertions in Java
+
+What is the primary purpose of assertions in Java?
+a) To handle user input validation
+b) To check internal invariants and postconditions
+c) To replace exception handling for preconditions
+d) To enable debugging guards during development
+Correct: b, d
+Which of the following are valid uses of assertions?
+a) Checking if a file has been parsed entirely (postcondition)
+b) Validating method parameters from external sources
+c) Ensuring a loop never ends (stream invariant)
+d) Verifying a person's age is between 0 and 140 (class invariant)
+Correct: a, c, d
+What happens if an assertion fails at runtime?
+a) The program throws an AssertionError.
+b) The program continues execution silently.
+c) The program throws a checked exception.
+d) The behavior depends on whether assertions are enabled.
+Correct: a, d
+How are assertions enabled when running a Java program?
+a) java -enableassertions MyClass
+b) java -ea MyClass
+c) Compile with -source <version>
+d) Add @EnableAssertions annotation
+Correct: b
+Why should assertions not be used for method parameter validation?
+a) Assertions can be disabled at runtime.
+b) Exceptions are more appropriate for external input.
+c) Assertions are slower than exceptions.
+d) Assertions cannot display custom error messages.
+Correct: a, b
+Which of the following is a bad practice with assertions?
+a) Using them to check algorithm invariants.
+b) Creating side effects (e.g., modifying program state).
+c) Testing user interaction results.
+d) Checking postconditions.
+Correct: b, c
+Unit Testing in Java
+
+What is the primary goal of unit testing?
+a) To test the entire system end-to-end.
+b) To verify a single unit of behavior (e.g., a method).
+c) To replace integration testing.
+d) To ensure code reliability during changes.
+Correct: b, d
+Which JUnit annotation marks a method as a test case?
+a) @Test
+b) @Before
+c) @Parameterized
+d) @Suite
+Correct: a
+What are the three clauses of a well-structured test?
+a) Given, When, Then
+b) Setup, Execute, Validate
+c) Precondition, Action, Postcondition
+d) Input, Process, Output
+Correct: a, b
+Which of the following are JUnit assertion methods?
+a) assertEquals(expected, actual)
+b) assertTrue(condition)
+c) assertNull(object)
+d) fail(message)
+Correct: a, b, c, d
+Why should test methods be named descriptively?
+a) To comply with JUnit naming conventions.
+b) To make failures easier to diagnose.
+c) To avoid using comments in tests.
+d) To reflect the behavior being tested.
+Correct: b, d
+What is the purpose of @Before in JUnit?
+a) To run code once before all tests in the class.
+b) To run code before each test method.
+c) To initialize test dependencies.
+d) To clean up resources after tests.
+Correct: b, c
+How does JUnit distinguish between a failure and an error?
+a) A failure means the test logic is incorrect.
+b) An error means the test could not execute (e.g., threw an exception).
+c) A failure means the assertion was not met.
+d) Errors are logged but do not affect test results.
+Correct: b, c
+Which of the following is a good practice for unit tests?
+a) Testing private methods directly.
+b) Avoiding duplication using @Before methods.
+c) Using domain-specific terminology in test names.
+d) Relying on implementation details.
+Correct: b, c
+What is the purpose of @Test(expected = Exception.class)?
+a) To ensure the test throws the specified exception.
+b) To handle exceptions during test execution.
+c) To skip the test if an exception occurs.
+d) To verify postconditions after exceptions.
+Correct: a
+Advanced Testing Concepts
+
+What is a parameterized test in JUnit?
+a) A test that accepts command-line arguments.
+b) A test reused with multiple input datasets.
+c) A test annotated with @RunWith(Parameterized.class).
+d) A test that dynamically generates inputs.
+Correct: b, c
+Which of the following is required for a parameterized test?
+a) A static method annotated with @Parameters.
+b) A public constructor for the test class.
+c) A @Suite annotation.
+d) A @BeforeClass method.
+Correct: a, b
+What is the purpose of a test suite?
+a) To group related test classes for execution.
+b) To define global test configurations.
+c) To replace individual test annotations.
+d) To share resources across tests.
+Correct: a
+Which JUnit 5 annotation replaces @Before?
+a) @BeforeEach
+b) @BeforeAll
+c) @Setup
+d) @BeforeTest
+Correct: a
+Why is assertThat(value, matcher) preferred over assertTrue?
+a) It provides clearer diagnostic messages.
+b) It supports chained matchers like is() and not().
+c) It is faster to execute.
+d) It works with Hamcrest matchers.
+Correct: a, b, d
+Which of the following are Hamcrest matchers?
+a) is()
+b) not()
+c) hasItem()
+d) either()
+Correct: a, b, c, d
+What does the timeout parameter in @Test do?
+a) Skips the test if it runs too long.
+b) Fails the test if it exceeds the specified duration.
+c) Delays test execution.
+d) Measures test performance.
+Correct: b
+Which of the following violates the "test behavior, not implementation" principle?
+a) Testing only public methods.
+b) Exposing private fields for testing.
+c) Using @Before to set up test data.
+d) Changing assertions after refactoring.
+Correct: b
+How does JUnit 5 differ from JUnit 4 in assertions?
+a) Assertions are in org.junit.jupiter.api.Assertions.
+b) @Before is replaced by @BeforeEach.
+c) It requires Java 8 or higher.
+d) It does not support parameterized tests.
+Correct: a, b, c
+What is the "DRY" principle in testing?
+a) Avoid repeating test logic (e.g., using @Before).
+b) Use descriptive test names.
+c) Share test data across classes.
+d) Minimize assertions per test.
+Correct: a
+Which of the following is true about @AfterClass?
+a) It runs after all tests in the class.
+b) It must annotate a static method.
+c) It cleans up shared resources.
+d) It replaces @After in JUnit 5.
+Correct: a, b, c
+What is the purpose of @RunWith(Suite.class)?
+a) To execute tests in parallel.
+b) To group test classes into a suite.
+c) To enable parameterized tests.
+d) To customize test execution order.
+Correct: b
+Which of the following is a benefit of automated testing?
+a) Early bug detection.
+b) Fearless refactoring.
+c) Reduced need for documentation.
+d) Continuous code reliability.
+Correct: a, b, d
+What is the main advantage of parameterized tests?
+a) Reducing code duplication.
+b) Supporting dynamic test generation.
+c) Improving test performance.
+d) Simplifying test suites.
+Correct: a
+Which of the following is a JUnit 4 limitation addressed in JUnit 5?
+a) No support for assertions.
+b) No parameterized tests.
+c) No nested test classes.
+d) Dependency on Java 8 features.
+Correct: d
